@@ -67,6 +67,7 @@ await updateDoc(tokenRef, {
 
   return (
     <main className={styles.main}>
+      Hello World
     </main>
   )
 }
