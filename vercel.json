@@ -1,13 +1,7 @@
 {
     "headers": [
       {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
+        "Cache-Control": "max-age=3600"
       }
     ]
   }
