@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { doc, collection, addDoc, updateDoc } from "firebase/firestore"; 
+import Helper from '../../components/Helper';
 
 
 
@@ -27,45 +28,45 @@ export default function Home() {
 // .catch(error => console.error(error));
 
 
-//RANDOM NUMBER 
-const randomNumber = Math.floor(Math.random() * 100);
+// //RANDOM NUMBER 
+// const randomNumber = Math.floor(Math.random() * 100);
 
-// FIREBASE
-const firebaseConfig = {
-  apiKey: "AIzaSyDvv6zU1DNGi1LoidkOAu3Ro2JLcrplf0U",
-  authDomain: "truezenithcreative-85781.firebaseapp.com",
-  projectId: "truezenithcreative-85781",
-  storageBucket: "truezenithcreative-85781.appspot.com",
-  messagingSenderId: "199949387061",
-  appId: "1:199949387061:web:c94b1a2fab756448b5f87c"
-};
+// // FIREBASE
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDvv6zU1DNGi1LoidkOAu3Ro2JLcrplf0U",
+//   authDomain: "truezenithcreative-85781.firebaseapp.com",
+//   projectId: "truezenithcreative-85781",
+//   storageBucket: "truezenithcreative-85781.appspot.com",
+//   messagingSenderId: "199949387061",
+//   appId: "1:199949387061:web:c94b1a2fab756448b5f87c"
+// };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
-const currentTime = new Date().toLocaleTimeString();
-const currentDate = new Date().toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit'
-});
+// const currentTime = new Date().toLocaleTimeString();
+// const currentDate = new Date().toLocaleDateString('en-US', {
+//   year: 'numeric',
+//   month: '2-digit',
+//   day: '2-digit'
+// });
 
 
- async function addData(){
-  const tokenRef = doc(db, "360HomeFinder", "token");
-  await updateDoc(tokenRef, {
-    number: randomNumber,
-    date: currentDate,
-    time: currentTime,  
-    token: "HERE GOES YOUR TOKEN"
-  });
- }
+//  async function addData(){
+//   const tokenRef = doc(db, "360HomeFinder", "token");
+//   await updateDoc(tokenRef, {
+//     number: randomNumber,
+//     date: currentDate,
+//     time: currentTime,  
+//     token: "HERE GOES YOUR TOKEN"
+//   });
+//  }
 
- addData();
+//  addData();
 
   return (
     <main className={styles.main}>
-      New Number: {randomNumber}
+      <Helper />
     </main>
   )
 }
