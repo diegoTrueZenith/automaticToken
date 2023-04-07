@@ -27,8 +27,10 @@ export default function Home() {
 // .catch(error => console.error(error));
 
 
+//RANDOM NUMBER 
+const randomNumber = Math.floor(Math.random() * 100);
 
-
+// FIREBASE
 const firebaseConfig = {
   apiKey: "AIzaSyDvv6zU1DNGi1LoidkOAu3Ro2JLcrplf0U",
   authDomain: "truezenithcreative-85781.firebaseapp.com",
@@ -42,7 +44,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const currentTime = new Date().toLocaleTimeString();
-
 const currentDate = new Date().toLocaleDateString('en-US', {
   year: 'numeric',
   month: '2-digit',
@@ -51,22 +52,20 @@ const currentDate = new Date().toLocaleDateString('en-US', {
 
 
  async function addData(){
-
-
-const tokenRef = doc(db, "360HomeFinder", "token");
-await updateDoc(tokenRef, {
-  date: currentDate,
-  time: currentTime,  
-  token: "HERE GOES YOUR TOKEN"
-});
+  const tokenRef = doc(db, "360HomeFinder", "token");
+  await updateDoc(tokenRef, {
+    number: randomNumber,
+    date: currentDate,
+    time: currentTime,  
+    token: "HERE GOES YOUR TOKEN"
+  });
  }
 
  addData();
 
-
-
   return (
     <main className={styles.main}>
+      New Number: {randomNumber}
     </main>
   )
 }
