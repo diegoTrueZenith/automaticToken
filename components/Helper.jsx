@@ -8,7 +8,7 @@ const randomNumber = Math.floor(Math.random() * 100);
 
   return (
     <div>
-      Here's the helper {randomNumber}
+      Helper:  {randomNumber}
     </div>
   )
 }
