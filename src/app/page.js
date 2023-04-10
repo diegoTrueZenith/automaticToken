@@ -52,17 +52,22 @@ export default function Home() {
 // });
 
 
-//  async function addData(){
-//   const tokenRef = doc(db, "360HomeFinder", "token");
-//   await updateDoc(tokenRef, {
-//     number: randomNumber,
-//     date: currentDate,
-//     time: currentTime,  
-//     token: "HERE GOES YOUR TOKEN"
-//   });
-//  }
+ async function addData(){
+  const tokenRef = doc(db, "360HomeFinder", "token");
+  await updateDoc(tokenRef, {
+    number: randomNumber,
+    date: currentDate,
+    time: currentTime,  
+    token: "HERE GOES YOUR TOKEN"
+  });
 
-//  addData();
+  return {
+    revalidate:10
+  }
+
+ }
+
+ addData();
 
   return (
     <main className={styles.main}>
