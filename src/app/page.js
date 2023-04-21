@@ -35,8 +35,8 @@ const url = 'https://open-api.guesty.com/oauth2/token';
 const requestData = new URLSearchParams({
   grant_type: 'client_credentials',
   scope: 'open-api',
-  client_secret: 'iBUcfG26WS9cJLKXbOgeZW0Onz_8EeLBuVjqV7_y',
-  client_id: '0oa9791wxak71xeJb5d7'
+  client_secret: '3knPwQVxEL4zkf5Itpv2TnX5NGcvW0KJYKMGs2LK',
+  client_id: '0oa97q9ligRqRxAHG5d7'
 });
 
 fetch(url, {
